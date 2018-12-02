@@ -1,0 +1,126 @@
+COntinuaçao 21-2
+
+Mudar a placa de rede da maquina virtual para PLACA EM MODO BRIDGE
+ID- lucas
+senha - 1955...
+
+shutdown -h 0
+Sai e salva o server
+
+
+-----------------------------------------------------------------------
+Comandos
+ps -ef verifica processos
+
+top = saber os processos que esta executando em tempo real
+
+kill = matar processo pelo ID ex kill 838 que finaliza o processo kill
+com o comando kill -9 ele força para finalizar ex: kill -9 ID
+
+permissões
+
+ls /etc = lista todo conteudo no diretorio
+ls -ls = mostra lista
+
+*sempre que estiver com a letra D primeiro, quer dizer que é diretorio, ex
+drwxr-xr-x.........
+
+* se for traço(-) é arquivo 
+* se for "L" é um link(atalho)
+esses 10 caracteres primeiro, separa para poder indentificar Ex
+- --- --- ---
+nelas se repetem apenas
+R - Leitura
+W - Escrever
+X - execução
+eles existem uma ordem sempre vai ser nessa ordem:
+
+- --- --- ---
+  rwx rwx rwx
+
+no caso do traço (->) pode ter nas 2 casas, ele apenas identifica que esta desabilitado
+
+Eles está separado por 3 partes para por:
+
+1-coluna= DONO/USUARIO DO ARQUIVO
+2-coluna= GRUPO (* No linux todo usuario ta dentro de algum grupo)
+3-coluna= OUTROS (* se vc nao é dono e nao ta no grupo, é outros)
+
+EXEMPLOS:
+
+-RW-R--R-- = O QUE SIGNIFICA QUE = o usuario dono, pode LER(R),ESCREVER(W), e nao pode EXECUTAR(x)
+
+	PARA ALTERAR ESSAS PERMIÇÃOES ----------
+Comando
+
+chmod = alterar permição
+Ex: quero adicionar a permição de execução ao usuario, faz o comando
+	chmod u+x nome_arq
+e para tirar seria
+	chmod o-r nome_arq
+
+e para alterar todas elas seria:
+	chmod 777 nome_arq
+esse 777 ablita todas as permições(RWX) para os 3.
+
+esse 777 significa os numero bnarios
+ex:
+-RW-R--R--
+ 110100100 
+
+transforma esse numero binario em decimal representado em 3 casa apenas que seria RWX dos 3 grupos
+ como criar essa tabela de permissões
+
+r-- = 4
+-w- = 2
+--x = 1
+r-x = 5
+rw- = 6
+-wx = 3
+rwx = 7
+--- = 0	
+
+-------------------------------
+Existe 2 formas de editar texto no linux VI e NANO
+2 app que ja vem dentro do ubunto
+para criar um ed de texti
+	vi nome_arq
+EX	vi bilac.doc
+
+quando esta editando, aperta ESC, ":" e aperte
+ql!
+que salva e sai
+----------------------------------
+
+tudo dentro do vi tem que apertar ESC para comando
+
+Comandos 
+/cadeia - pesquisa a frente
+
+isso tudo é no ed de texto VI
+--------------------------------
+no nano tem tudo mais facil, o "^" significa CTRL
+
+
+
+
+
+
+
+
+atividade - 
+PWD= para verificar em qual direitorio vc se encontra
+mkdir = criar pasta diretorio
+
+cp = copia (Ex cp -r mack /tmp) ele ta copiando a pasta mack e tudo que tem dentro para tmp
+para copiar todo arquivo txt seria *.txt
+
+>> = sempre colocar em baixo do arquivo ja existente
+> = ele cria 
+ex: ls /bin > listabin.txt
+eu to copiando tudo da pasta bin para listabin.txt
+
+
+
+
+

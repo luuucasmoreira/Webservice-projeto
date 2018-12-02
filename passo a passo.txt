@@ -1,0 +1,65 @@
+Depois que verificar se esta pingando e esta na net no servidor linux ( ping www.google.com)
+entrar no ifconfig e colocar o ip no ubunto desk
+
+se entrar no site do ftp esta correto
+-----------------------------------------
+Parte do cliente
+entrar no terminal no ubunto desk
+escrever
+#sudo nano /etc/hosts
+
+Editar o arquivo e adicionar o ip e seu www
+ex
+127.17.5.10	www.lucas.com.br
+
+------------------------------------------
+parte do servidor-servidor linux
+criar os usuarios
+para visualisar os usuarios que ja existe = 
+#cd /etc
+#cat passwd
+
+para add o usuario
+#useradd -d /var/www/lucascliente -m -s /bin/false lucascliente
+#passwd
+
+------------------------------------------
+servidor linux
+configurar o apache
+entrar no 
+#cd etc/apache2
+#nano apache2.conf
+
+Modificar o 
+#ServerRoot "/etc/apache2"
+apenas tirar a linha de comentario "#"
+-------------------------------------------
+Entrar no diretorio novamente
+#cd etc/apache2/sites-available
+
+e copiar renomeando para o nome do usuario que vc quer
+cp 000-default.conf lucascliente.conf
+
+abre o lucascliente.conf com nano
+#nano lucascliente.conf
+
+mudar o 
+#servername
+para 
+servername www.lucas.com.br (o dominio do seu usuario)
+
+e colocar o diretorio do usuario
+DocumentRoot /var/www/lucascliente
+
+e salva
+Ctrl+O
+------------------------------------------
+
+
+Digitar o comando dentro da pasta site-avaliable
+#a2ensite lucascliente.conf
+
+------------------------------------------
+No ubunto desck verificar se esta corrento colocando no navegador o dominio que criou
+Ex
+www.lucas.br.com

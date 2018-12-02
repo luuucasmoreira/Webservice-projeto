@@ -1,0 +1,11 @@
+Script de tudo que fiz
+
+#sudo su
+
+#mkdir ArquivosUsuarios
+#cd /ArquivosUsuarios
+#useradd -d /home/ArquivosUsuarios/camila -m -s /bin/false Camila
+#passwd Camila
+(digitei a nova senha "camila123")
+
+#cat /etc/passwd (ver todos os usuarios)

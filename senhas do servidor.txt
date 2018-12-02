@@ -1,0 +1,8 @@
+id root do servidor
+lucas
+1955725
+
+senha dos perfis
+lucascliente 123456
+altiere		--
+vitor		--

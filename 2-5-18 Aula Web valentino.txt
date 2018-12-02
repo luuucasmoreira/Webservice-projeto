@@ -1,0 +1,58 @@
+Instalar Linux server e desktop
+FTP instalado
+Apache instalado = apt-get instal apache2
+acesso a internet
+
+-------------------------------
+Verificar o ip
+ifconfig
+
+no cliente
+ipconfig
+
+
+Para o cliente acessar o apache=
+dar um ping para verificar se estar verificando
+no cliente
+ping num_servidor
+Se pingar, esta certo, se nao tem alguma coisa errada
+
+-----------------------------
+Proximo passo
+
+Acessar um serviço que esta no apache
+como acesso um serviço(mais de um serviço rodando ex, apache e ftp)
+com as portas
+FTP porta 21
+APACHE porta 80
+
+IP_servidor e a portar do serviço Ex (80)
+
+(isso no cliente Firefox por exemplo, na URL)
+pode ou nao colocar a porta, por estar configurado na porta 80 se nao pode configurar na por com :80
+
+-----------------------------------
+
+para entrar com servidor www.... precisa ser DNS
+faz uma tabale que pega o www.valentino.com.br que identifica que o ip do servidor é xxx.xxx.xxx.xxx
+pra isso precisa instalar o servidor DNS
+
+dentro da maquina cliente busca no host, depois DNS, nao temos DNS mais temos o host
+Dentro do Windowns existe um arquivo no C:/system32/etc/drivers/hosts
+No linux fica no 
+/etc/hosts
+
+dentro de um desses arquivos edita no bloco de notas
+(ip) host
+192.188.100.11  www.valentino.com.br
+192.188.100.11 www.lucas.com.br
+
+Por exemplo 
+
+no caso que tera 4 sites no mesmo servidor , adciona 4
+o mesmo ip com outros dominios
+
+------------------------------------
+dentro do etc/apache2
+tem um alto explicativo do apache
+

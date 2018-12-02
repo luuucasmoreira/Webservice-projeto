@@ -1,0 +1,76 @@
+POrta que é utilizado para FTP = 21
+
+no modo passivo é recebido por a porta 21 pra fazer as duas coisas (entrar e trafegar dados), modo passivo e com o comando "PASV"
+
+OpenSSL ou TLS pode combinar o nivel de segurança
+
+Como ver se tem um servidor FTP instalado é "#dpkg -l proftpd"
+
+para instalar é "apt-get install proftpd"
+
+Saber a versao instalada "#proftpd -v"
+
+para modificar é o arquivo "#vi /etc/proftpd/proftpd.conf
+
+Trocar nome do server
+ServerName FTP Bilac
+
+a primeira coisa ser modificado é a linha
+UselPv6 off
+
+
+Para usar o FTP dentro ou fora da mesma rede, local ou externo,se tiver OFF nao dara pra fazer conecção remota
+AllowForeignAddress on
+
+
+Limita o usuario para pasta HOME ou seja, a pasta dele sera /home/lucas/perfil, ficara apenas nessa pasta
+	DefaulRoot ~
+
+O usuario podera logar no servidor SSH, posso criar um perfil que nao pode logar o servidor via terminal ou via console, se eu por ON ele deixa o usuario entrar no servidor via console e via shell.entao ele so entra no FTP com OFF
+RequiredValidShell off
+
+POrt21 - colocar a porta
+
+Portas abertas 
+PassivePorts 27000 28000
+
+Maximo de pessoas que podem entrar no servidor FTP
+MaxInstances 20
+
+
+ServerType standalone;
+
+Mascara padrao
+Umask 022 022
+
+ira aceitar usuario shell
+RequereValidShell off
+
+qual porta esta sendo executada
+#netstat -nltup
+
+Reiniciar o Proftpd
+#/etc/init.d/proftpd restart
+
+tentar logar
+FTP://ip.do.servidor:21
+
+para criar o usuario, e interessante cria-los sem shell
+#
+
+
+edduser -shell/bin/false fulado
+
+Servidor pode usar de duas formas, TRADICIONAL e ANONIMA 
+o tradicional ele entra com login e senha 
+ja anonimo um usuario qualquer entra em um modo pre configurado
+
+entrar pelo FTP
+#ftp 192.168.1.x
+
+para sair
+#ftp>quit
+
+trocar a senha
+password USUARIO
+
